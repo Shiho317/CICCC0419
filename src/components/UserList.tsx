@@ -1,4 +1,5 @@
 import React, { FC, useState, useEffect, useTransition } from "react";
+import { Link } from "react-router-dom";
 import { IUser } from "../model/IUser";
 import { UserService } from "../services/UserService";
 
@@ -63,7 +64,11 @@ const UserList: FC = () => {
                 state.users.map((user) => (
                   <tr key={user.id}>
                     <td>{user.id}</td>
-                    <td>{user.name}</td>
+                    <td>
+                      <Link to={`/userdetail/${user.id}`}>
+                        {user.name}
+                      </Link>
+                    </td>
                     <td>{user.email}</td>
                     <td>{user.phone}</td>
                     <td>{user.company.name}</td>

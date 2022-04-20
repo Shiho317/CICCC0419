@@ -7,4 +7,9 @@ export class UserService{
         const dataURL: string = `${this.URL}/users`
         return axios.get(dataURL)
     }
+
+    public static getAUser(id: number){
+        const dataURL: string = `${this.URL}/users/${id}`
+        return axios.get(dataURL)
+    }
 }
